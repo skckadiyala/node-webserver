@@ -40,7 +40,7 @@ app.use((req,res,next) => {
 //     next();
 // })
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
       //res.send("Hello Express");
       // res.send({
       //     name: "Suman",
@@ -61,6 +61,13 @@ app.get('/home', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page',
+        currentYear: new Date().getFullYear()
+    })
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects Page',
         currentYear: new Date().getFullYear()
     })
 });
